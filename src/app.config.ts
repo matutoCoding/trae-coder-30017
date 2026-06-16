@@ -11,6 +11,8 @@ export default defineAppConfig({
     'pages/product-detail/index',
     'pages/order-detail/index',
     'pages/sales-record/index',
+    'pages/orders-list/index',
+    'pages/sales-detail/index',
   ],
   window: {
     backgroundTextStyle: 'light',

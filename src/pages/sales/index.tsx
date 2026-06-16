@@ -31,9 +31,9 @@ const SalesPage: React.FC = () => {
   const handleQuickAction = (type: string) => {
     console.log('[Sales] 点击快捷操作:', type)
     const pathMap: Record<string, string> = {
-      wedding: '/pages/order-detail/index?type=wedding',
-      cultural: '/pages/order-detail/index?type=cultural',
-      custom: '/pages/order-detail/index?type=custom',
+      wedding: '/pages/orders-list/index?type=wedding',
+      cultural: '/pages/orders-list/index?type=cultural',
+      custom: '/pages/orders-list/index?type=custom',
       record: '/pages/sales-record/index',
     }
     Taro.navigateTo({ url: pathMap[type] }).catch(console.error)
@@ -44,8 +44,14 @@ const SalesPage: React.FC = () => {
     Taro.navigateTo({ url: `/pages/order-detail/index?id=${id}` }).catch(console.error)
   }
 
+  const handleSalesRecordClick = (id: string) => {
+    console.log('[Sales] 点击销售记录:', id)
+    Taro.navigateTo({ url: `/pages/sales-detail/index?id=${id}` }).catch(console.error)
+  }
+
   const handleViewAllOrders = () => {
     console.log('[Sales] 查看全部订单')
+    Taro.navigateTo({ url: '/pages/orders-list/index?type=all' }).catch(console.error)
   }
 
   const handleViewAllSales = () => {
@@ -185,7 +191,7 @@ const SalesPage: React.FC = () => {
               <View
                 key={record.id}
                 className={styles.recordItem}
-                onClick={() => handleOrderClick(record.id)}
+                onClick={() => handleSalesRecordClick(record.id)}
               >
                 <View className={styles.recordHeader}>
                   <Text className={styles.recordNo}>{record.recordNo}</Text>

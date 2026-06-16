@@ -44,7 +44,11 @@ const SalesRecordPage: React.FC = () => {
 
   const handleRecordClick = (id: string) => {
     console.log('[SalesRecord] 点击销售记录:', id)
-    Taro.showToast({ title: '查看详情', icon: 'none' })
+    const record = mockSalesRecords.find(r => r.id === id)
+    if (record) {
+      console.log('[SalesRecord] 记录信息:', record.recordNo, record.customerName, record.totalAmount)
+    }
+    Taro.navigateTo({ url: `/pages/sales-detail/index?id=${id}` }).catch(console.error)
   }
 
   const handleAdd = () => {

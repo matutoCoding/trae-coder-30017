@@ -1,0 +1,325 @@
+@import '~@/styles/theme';
+
+.detailPage {
+  min-height: 100vh;
+  background-color: $color-bg-page;
+  padding-bottom: 40rpx;
+}
+
+.detailHeader {
+  background: linear-gradient(135deg, $color-primary 0%, $color-primary-light 100%);
+  padding: 40rpx 32rpx;
+  color: #fff;
+
+  .channelRow {
+    display: flex;
+    align-items: center;
+    margin-bottom: 16rpx;
+
+    .channelIcon {
+      font-size: 48rpx;
+      margin-right: 16rpx;
+    }
+
+    .channelName {
+      font-size: 32rpx;
+      font-weight: 600;
+    }
+  }
+
+  .recordNo {
+    font-size: 24rpx;
+    opacity: 0.9;
+    margin-bottom: 24rpx;
+  }
+
+  .priceRow {
+    display: flex;
+    align-items: baseline;
+
+    .priceLabel {
+      font-size: 26rpx;
+      opacity: 0.8;
+      margin-right: 12rpx;
+    }
+
+    .price {
+      font-size: 56rpx;
+      font-weight: 700;
+
+      .symbol {
+        font-size: 32rpx;
+        margin-right: 4rpx;
+      }
+    }
+
+    .quantity {
+      margin-left: auto;
+      font-size: 26rpx;
+      opacity: 0.9;
+    }
+  }
+}
+
+.section {
+  margin: 32rpx 32rpx 0;
+  background-color: #fff;
+  border-radius: 24rpx;
+  padding: 32rpx;
+  box-shadow: 0 4rpx 16rpx rgba(0, 0, 0, 0.06);
+
+  .sectionTitle {
+    font-size: 30rpx;
+    font-weight: 600;
+    color: $color-text-primary;
+    margin-bottom: 24rpx;
+    padding-left: 16rpx;
+    border-left: 6rpx solid $color-primary;
+  }
+}
+
+.customerInfo {
+  display: flex;
+  align-items: center;
+
+  .avatar {
+    width: 88rpx;
+    height: 88rpx;
+    border-radius: 50%;
+    background: linear-gradient(135deg, $color-primary-light 0%, $color-primary 100%);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 40rpx;
+    color: #fff;
+    margin-right: 24rpx;
+  }
+
+  .info {
+    flex: 1;
+
+    .name {
+      font-size: 30rpx;
+      font-weight: 600;
+      color: $color-text-primary;
+      margin-bottom: 8rpx;
+    }
+
+    .label {
+      font-size: 24rpx;
+      color: $color-text-secondary;
+    }
+  }
+
+  .contactBtn {
+    width: 72rpx;
+    height: 72rpx;
+    border-radius: 50%;
+    background-color: #E8F5E9;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 36rpx;
+  }
+}
+
+.productSection {
+  .productCard {
+    display: flex;
+    align-items: center;
+    padding: 24rpx;
+    background-color: $color-bg-page;
+    border-radius: 16rpx;
+    margin-bottom: 24rpx;
+
+    .productIcon {
+      width: 96rpx;
+      height: 96rpx;
+      border-radius: 16rpx;
+      background: linear-gradient(135deg, #FFF3E0 0%, #FFE0B2 100%);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 48rpx;
+      margin-right: 24rpx;
+      flex-shrink: 0;
+    }
+
+    .productInfo {
+      flex: 1;
+
+      .productName {
+        font-size: 30rpx;
+        font-weight: 600;
+        color: $color-text-primary;
+        margin-bottom: 12rpx;
+      }
+
+      .specRow {
+        display: flex;
+        gap: 24rpx;
+        font-size: 24rpx;
+        color: $color-text-secondary;
+      }
+    }
+  }
+
+  .priceGrid {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 24rpx;
+  }
+
+  .priceItem {
+    width: calc(50% - 12rpx);
+    display: flex;
+    flex-direction: column;
+    padding: 20rpx;
+    background-color: $color-bg-page;
+    border-radius: 12rpx;
+
+    .label {
+      font-size: 24rpx;
+      color: $color-text-secondary;
+      margin-bottom: 8rpx;
+    }
+
+    .value {
+      font-size: 28rpx;
+      color: $color-text-primary;
+      font-weight: 600;
+    }
+
+    &.highlight .value {
+      color: $color-primary;
+      font-size: 32rpx;
+    }
+  }
+}
+
+.paymentSection {
+  .paymentRow {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 16rpx 0;
+
+    .label {
+      font-size: 26rpx;
+      color: $color-text-secondary;
+    }
+
+    .value {
+      font-size: 28rpx;
+      color: $color-text-primary;
+      font-weight: 500;
+    }
+  }
+
+  .totalRow {
+    padding-top: 24rpx;
+    margin-top: 8rpx;
+    border-top: 1rpx solid $color-border;
+
+    .label {
+      font-size: 28rpx;
+      font-weight: 600;
+      color: $color-text-primary;
+    }
+
+    .value {
+      font-size: 40rpx;
+      font-weight: 700;
+      color: $color-primary;
+
+      .symbol {
+        font-size: 26rpx;
+        margin-right: 4rpx;
+      }
+    }
+  }
+}
+
+.saleInfo {
+  .infoRow {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 16rpx 0;
+    border-bottom: 1rpx solid $color-border;
+
+    &:last-child {
+      border-bottom: none;
+    }
+
+    .label {
+      font-size: 26rpx;
+      color: $color-text-secondary;
+    }
+
+    .value {
+      font-size: 28rpx;
+      color: $color-text-primary;
+      font-weight: 500;
+      text-align: right;
+      max-width: 60%;
+    }
+  }
+}
+
+.remarkSection {
+  .sectionTitle {
+    display: flex;
+    align-items: center;
+
+    .icon {
+      margin-right: 8rpx;
+    }
+  }
+
+  .remarkText {
+    font-size: 26rpx;
+    color: $color-text-secondary;
+    line-height: 1.8;
+    padding: 24rpx;
+    background-color: #FFF8E1;
+    border-radius: 12rpx;
+    border-left: 4rpx solid #FFB300;
+  }
+}
+
+.actionBar {
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  background-color: #fff;
+  padding: 24rpx 32rpx;
+  padding-bottom: calc(24rpx + env(safe-area-inset-bottom));
+  display: flex;
+  gap: 24rpx;
+  box-shadow: 0 -4rpx 16rpx rgba(0, 0, 0, 0.06);
+
+  .btn {
+    flex: 1;
+    height: 88rpx;
+    border-radius: 44rpx;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 30rpx;
+    font-weight: 600;
+
+    &.secondary {
+      background-color: #FFF3E0;
+      color: $color-primary;
+      border: 2rpx solid $color-primary;
+    }
+
+    &.primary {
+      background: linear-gradient(135deg, $color-primary 0%, $color-primary-light 100%);
+      color: #fff;
+      box-shadow: 0 8rpx 24rpx rgba(139, 69, 19, 0.3);
+    }
+  }
+}

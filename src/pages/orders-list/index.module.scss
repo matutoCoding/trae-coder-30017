@@ -1,0 +1,294 @@
+@import '~@/styles/theme';
+
+.listPage {
+  min-height: 100vh;
+  background-color: $color-bg-page;
+  padding-bottom: 40rpx;
+}
+
+.headerSection {
+  background: linear-gradient(135deg, $color-primary 0%, $color-primary-light 100%);
+  padding: 40rpx 32rpx;
+  color: #fff;
+
+  .title {
+    font-size: 32rpx;
+    font-weight: 600;
+    margin-bottom: 24rpx;
+  }
+
+  .statsRow {
+    display: flex;
+    gap: 24rpx;
+  }
+
+  .statItem {
+    flex: 1;
+    background-color: rgba(255, 255, 255, 0.15);
+    border-radius: 16rpx;
+    padding: 20rpx 12rpx;
+    text-align: center;
+
+    .value {
+      font-size: 32rpx;
+      font-weight: 700;
+      margin-bottom: 6rpx;
+    }
+
+    .label {
+      font-size: 22rpx;
+      opacity: 0.9;
+    }
+  }
+}
+
+.typeTabs {
+  display: flex;
+  margin: 32rpx 32rpx 0;
+  background-color: #fff;
+  border-radius: 20rpx;
+  padding: 8rpx;
+  box-shadow: 0 4rpx 16rpx rgba(0, 0, 0, 0.06);
+  overflow-x: auto;
+
+  .tabItem {
+    flex: 1;
+    min-width: 140rpx;
+    height: 72rpx;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 16rpx;
+    font-size: 26rpx;
+    color: $color-text-secondary;
+    white-space: nowrap;
+    transition: all 0.3s ease;
+
+    &.active {
+      background: linear-gradient(135deg, $color-primary 0%, $color-primary-light 100%);
+      color: #fff;
+      font-weight: 600;
+    }
+  }
+}
+
+.orderList {
+  padding: 32rpx;
+
+  .listHeader {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 24rpx;
+
+    .title {
+      font-size: 30rpx;
+      font-weight: 600;
+      color: $color-text-primary;
+      padding-left: 16rpx;
+      border-left: 6rpx solid $color-primary;
+    }
+
+    .count {
+      font-size: 24rpx;
+      color: $color-text-secondary;
+
+      .num {
+        color: $color-primary;
+        font-weight: 600;
+        margin: 0 8rpx;
+      }
+    }
+  }
+}
+
+.orderItem {
+  background-color: #fff;
+  border-radius: 20rpx;
+  padding: 32rpx;
+  margin-bottom: 24rpx;
+  box-shadow: 0 4rpx 16rpx rgba(0, 0, 0, 0.06);
+
+  .orderHeader {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 20rpx;
+
+    .orderNo {
+      font-size: 28rpx;
+      font-weight: 600;
+      color: $color-text-primary;
+    }
+
+    .typeTag {
+      padding: 6rpx 16rpx;
+      border-radius: 16rpx;
+      font-size: 22rpx;
+      font-weight: 500;
+
+      &.wedding {
+        background-color: #FFEBEE;
+        color: #C62828;
+      }
+
+      &.cultural {
+        background-color: #E3F2FD;
+        color: #1565C0;
+      }
+
+      &.custom {
+        background-color: #F3E5F5;
+        color: #7B1FA2;
+      }
+
+      &.retail {
+        background-color: #FFF3E0;
+        color: $color-primary;
+      }
+    }
+  }
+
+  .orderContent {
+    display: flex;
+    align-items: center;
+    margin-bottom: 20rpx;
+    padding-bottom: 20rpx;
+    border-bottom: 1rpx solid $color-border;
+
+    .orderIcon {
+      width: 80rpx;
+      height: 80rpx;
+      border-radius: 16rpx;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 40rpx;
+      margin-right: 20rpx;
+      flex-shrink: 0;
+
+      &.wedding {
+        background: linear-gradient(135deg, #FFEBEE 0%, #FFCDD2 100%);
+      }
+
+      &.cultural {
+        background: linear-gradient(135deg, #E3F2FD 0%, #BBDEFB 100%);
+      }
+
+      &.custom {
+        background: linear-gradient(135deg, #F3E5F5 0%, #E1BEE7 100%);
+      }
+
+      &.retail {
+        background: linear-gradient(135deg, #FFF3E0 0%, #FFE0B2 100%);
+      }
+    }
+
+    .orderDetail {
+      flex: 1;
+
+      .patternName {
+        font-size: 28rpx;
+        font-weight: 500;
+        color: $color-text-primary;
+        margin-bottom: 8rpx;
+      }
+
+      .customer {
+        font-size: 24rpx;
+        color: $color-text-secondary;
+      }
+    }
+  }
+
+  .orderFooter {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+
+    .orderInfo {
+      display: flex;
+      align-items: center;
+      gap: 32rpx;
+
+      .infoItem {
+        font-size: 24rpx;
+        color: $color-text-secondary;
+
+        .value {
+          color: $color-text-primary;
+          font-weight: 500;
+          margin-left: 4rpx;
+        }
+      }
+    }
+
+    .totalAmount {
+      font-size: 32rpx;
+      font-weight: 700;
+      color: $color-primary;
+
+      .symbol {
+        font-size: 22rpx;
+        margin-right: 2rpx;
+      }
+    }
+  }
+
+  .statusRow {
+    margin-top: 16rpx;
+    padding-top: 16rpx;
+    border-top: 1rpx dashed $color-border;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+
+    .statusTag {
+      padding: 6rpx 16rpx;
+      border-radius: 8rpx;
+      font-size: 22rpx;
+      font-weight: 500;
+
+      &.pending {
+        background-color: #FFF3E0;
+        color: $color-status-doing;
+      }
+
+      &.producing {
+        background-color: #E3F2FD;
+        color: #1565C0;
+      }
+
+      &.completed {
+        background-color: #E8F5E9;
+        color: $color-status-done;
+      }
+
+      &.delivered {
+        background-color: #F3E5F5;
+        color: #7B1FA2;
+      }
+    }
+
+    .expectDate {
+      font-size: 22rpx;
+      color: #8D6E63;
+    }
+  }
+}
+
+.emptyState {
+  padding: 80rpx 32rpx;
+  text-align: center;
+
+  .icon {
+    font-size: 120rpx;
+    margin-bottom: 24rpx;
+    opacity: 0.5;
+  }
+
+  .text {
+    font-size: 28rpx;
+    color: $color-text-secondary;
+  }
+}
