@@ -1,0 +1,80 @@
+@use '@/styles/variables.scss' as *;
+
+.processCard {
+  background: $color-bg-card;
+  border-radius: $radius-lg;
+  padding: $spacing-lg;
+  box-shadow: $shadow-card;
+  margin-bottom: $spacing-md;
+  transition: all $transition-base;
+
+  &:active {
+    transform: scale(0.99);
+  }
+
+  .cardHeader {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin-bottom: $spacing-md;
+
+    .stepIndex {
+      width: 56rpx;
+      height: 56rpx;
+      border-radius: $radius-round;
+      background: linear-gradient(135deg, $color-primary 0%, $color-primary-light 100%);
+      color: $color-text-white;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: $font-size-md;
+      font-weight: $font-weight-semibold;
+    }
+
+    .stepInfo {
+      flex: 1;
+      margin-left: $spacing-md;
+
+      .stepName {
+        font-size: $font-size-lg;
+        font-weight: $font-weight-semibold;
+        color: $color-text-primary;
+        margin-bottom: 4rpx;
+      }
+
+      .stepCraftsman {
+        font-size: $font-size-sm;
+        color: $color-text-tertiary;
+      }
+    }
+  }
+
+  .stepDesc {
+    font-size: $font-size-md;
+    color: $color-text-secondary;
+    line-height: $line-height-normal;
+    margin-bottom: $spacing-md;
+  }
+
+  .stepMeta {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding-top: $spacing-md;
+    border-top: 1rpx solid $color-divider;
+
+    .duration {
+      font-size: $font-size-sm;
+      color: $color-text-tertiary;
+
+      .icon {
+        margin-right: 8rpx;
+      }
+    }
+
+    .timeInfo {
+      font-size: $font-size-sm;
+      color: $color-text-secondary;
+    }
+  }
+}

@@ -1,0 +1,278 @@
+@import '~@/styles/theme';
+
+.paintingPage {
+  min-height: 100vh;
+  background-color: $color-bg-page;
+  padding-bottom: 40rpx;
+}
+
+.pageHeader {
+  padding: 32rpx 32rpx 0;
+}
+
+.headerCard {
+  background: linear-gradient(135deg, $color-primary 0%, $color-primary-light 100%);
+  border-radius: 24rpx;
+  padding: 40rpx 32rpx;
+  color: #fff;
+  box-shadow: 0 8rpx 32rpx rgba(139, 69, 19, 0.3);
+
+  .title {
+    display: block;
+    font-size: 40rpx;
+    font-weight: 600;
+    margin-bottom: 16rpx;
+  }
+
+  .desc {
+    display: block;
+    font-size: 26rpx;
+    line-height: 1.6;
+    opacity: 0.9;
+  }
+}
+
+.processSteps {
+  padding: 40rpx 32rpx 0;
+
+  .stepsTitle {
+    display: block;
+    font-size: 32rpx;
+    font-weight: 600;
+    color: $color-text-primary;
+    margin-bottom: 24rpx;
+    padding-left: 16rpx;
+    border-left: 6rpx solid $color-primary;
+  }
+}
+
+.stepCard {
+  display: flex;
+  align-items: flex-start;
+  background-color: #fff;
+  border-radius: 20rpx;
+  padding: 32rpx;
+  margin-bottom: 24rpx;
+  box-shadow: 0 4rpx 16rpx rgba(0, 0, 0, 0.06);
+
+  .stepIcon {
+    width: 80rpx;
+    height: 80rpx;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 36rpx;
+    margin-right: 24rpx;
+    flex-shrink: 0;
+
+    &.paste {
+      background-color: #FFF3E0;
+    }
+
+    &.dry {
+      background-color: #E3F2FD;
+    }
+
+    &.draw {
+      background-color: #FCE4EC;
+    }
+
+    &.color {
+      background-color: #F3E5F5;
+    }
+
+    &.fix {
+      background-color: #E8F5E9;
+    }
+  }
+
+  .stepContent {
+    flex: 1;
+
+    .stepName {
+      display: block;
+      font-size: 30rpx;
+      font-weight: 600;
+      color: $color-text-primary;
+      margin-bottom: 12rpx;
+    }
+
+    .stepDesc {
+      display: block;
+      font-size: 26rpx;
+      color: $color-text-secondary;
+      line-height: 1.6;
+    }
+  }
+}
+
+.paintingList {
+  padding: 40rpx 32rpx 0;
+
+  .listTitle {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 24rpx;
+
+    .titleLeft {
+      display: flex;
+      align-items: center;
+      font-size: 32rpx;
+      font-weight: 600;
+      color: $color-text-primary;
+      padding-left: 16rpx;
+      border-left: 6rpx solid $color-primary;
+    }
+
+    .count {
+      font-size: 26rpx;
+      color: $color-text-secondary;
+
+      .num {
+        color: $color-primary;
+        font-weight: 600;
+        margin: 0 8rpx;
+      }
+    }
+  }
+}
+
+.paintingItem {
+  background-color: #fff;
+  border-radius: 20rpx;
+  padding: 32rpx;
+  margin-bottom: 24rpx;
+  box-shadow: 0 4rpx 16rpx rgba(0, 0, 0, 0.06);
+
+  .paintingHeader {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 24rpx;
+
+    .paintingId {
+      font-size: 30rpx;
+      font-weight: 600;
+      color: $color-text-primary;
+    }
+
+    .statusTag {
+      padding: 8rpx 20rpx;
+      border-radius: 24rpx;
+      font-size: 22rpx;
+      font-weight: 500;
+
+      &.done {
+        background-color: #E8F5E9;
+        color: $color-status-done;
+      }
+
+      &.doing {
+        background-color: #FFF3E0;
+        color: $color-status-doing;
+      }
+
+      &.pending {
+        background-color: #FFEBEE;
+        color: $color-status-error;
+      }
+    }
+  }
+
+  .paintingInfo {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 32rpx;
+    margin-bottom: 24rpx;
+    padding: 24rpx 0;
+    border-top: 1rpx solid $color-border;
+    border-bottom: 1rpx solid $color-border;
+
+    .infoItem {
+      display: flex;
+      flex-direction: column;
+      min-width: 140rpx;
+
+      .infoLabel {
+        font-size: 22rpx;
+        color: $color-text-secondary;
+        margin-bottom: 8rpx;
+      }
+
+      .infoValue {
+        font-size: 28rpx;
+        color: $color-text-primary;
+        font-weight: 500;
+      }
+    }
+  }
+
+  .paintingFooter {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+
+    .painter {
+      font-size: 24rpx;
+      color: $color-text-secondary;
+
+      .name {
+        color: $color-primary;
+        font-weight: 500;
+      }
+    }
+
+    .patternTag {
+      padding: 6rpx 16rpx;
+      background-color: #FCE4EC;
+      color: #C62828;
+      border-radius: 8rpx;
+      font-size: 22rpx;
+    }
+  }
+}
+
+.quickActions {
+  padding: 40rpx 32rpx 0;
+  display: flex;
+  gap: 24rpx;
+
+  .actionBtn {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    background-color: #fff;
+    border-radius: 20rpx;
+    padding: 32rpx 16rpx;
+    box-shadow: 0 4rpx 16rpx rgba(0, 0, 0, 0.06);
+
+    .icon {
+      font-size: 48rpx;
+      margin-bottom: 12rpx;
+    }
+
+    .text {
+      font-size: 26rpx;
+      color: $color-text-primary;
+      font-weight: 500;
+    }
+  }
+}
+
+.addBtn {
+  margin: 40rpx 32rpx 0;
+  height: 88rpx;
+  background: linear-gradient(135deg, $color-primary 0%, $color-primary-light 100%);
+  border-radius: 44rpx;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: #fff;
+  font-size: 30rpx;
+  font-weight: 600;
+  box-shadow: 0 8rpx 24rpx rgba(139, 69, 19, 0.3);
+}

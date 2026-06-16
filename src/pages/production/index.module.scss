@@ -1,0 +1,327 @@
+@use '@/styles/variables.scss' as *;
+
+.productionPage {
+  min-height: 100vh;
+  background: $color-bg-page;
+  padding-bottom: calc(env(safe-area-inset-bottom) + 120rpx);
+}
+
+.tabSection {
+  padding: $spacing-lg $page-padding 0;
+
+  .tabBar {
+    display: flex;
+    background: $color-bg-card;
+    border-radius: $radius-lg;
+    padding: $spacing-xs;
+    box-shadow: $shadow-card;
+
+    .tabItem {
+      flex: 1;
+      height: $button-height-md;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      border-radius: $radius-md;
+      font-size: $font-size-md;
+      color: $color-text-secondary;
+      font-weight: $font-weight-medium;
+      transition: all $transition-base;
+
+      &.active {
+        background: linear-gradient(135deg, $color-primary 0%, $color-primary-light 100%);
+        color: $color-text-white;
+        box-shadow: 0 4rpx 12rpx rgba($color-primary, 0.3);
+      }
+    }
+  }
+}
+
+.processStepsSection {
+  padding: $spacing-lg $page-padding;
+
+  .processHeader {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin-bottom: $spacing-md;
+
+    .statsInfo {
+      display: flex;
+      gap: $spacing-lg;
+
+      .statsItem {
+        display: flex;
+        align-items: center;
+        gap: 8rpx;
+
+        .statsDot {
+          width: 16rpx;
+          height: 16rpx;
+          border-radius: $radius-round;
+
+          &.done {
+            background: $color-success;
+          }
+
+          &.doing {
+            background: $color-warning;
+          }
+
+          &.pending {
+            background: $color-error;
+          }
+        }
+
+        .statsText {
+          font-size: $font-size-sm;
+          color: $color-text-secondary;
+
+          .statsNum {
+            font-weight: $font-weight-semibold;
+            color: $color-text-primary;
+            margin-right: 4rpx;
+          }
+        }
+      }
+    }
+  }
+}
+
+.craftSection {
+  padding: 0 $page-padding $spacing-lg;
+
+  .craftCard {
+    background: $color-bg-card;
+    border-radius: $radius-lg;
+    overflow: hidden;
+    box-shadow: $shadow-card;
+    margin-bottom: $spacing-md;
+    transition: all $transition-base;
+
+    &:active {
+      transform: scale(0.98);
+    }
+
+    .craftImage {
+      width: 100%;
+      height: 320rpx;
+      position: relative;
+
+      .craftOverlay {
+        position: absolute;
+        bottom: 0;
+        left: 0;
+        right: 0;
+        padding: $spacing-lg;
+        background: linear-gradient(180deg, transparent 0%, rgba(0, 0, 0, 0.7) 100%);
+        color: $color-text-white;
+
+        .craftTitle {
+          font-size: $font-size-lg;
+          font-weight: $font-weight-semibold;
+          margin-bottom: 8rpx;
+        }
+
+        .craftCraftsman {
+          font-size: $font-size-sm;
+          opacity: 0.9;
+        }
+      }
+    }
+
+    .craftContent {
+      padding: $spacing-lg;
+
+      .craftDesc {
+        font-size: $font-size-md;
+        color: $color-text-secondary;
+        line-height: $line-height-normal;
+        margin-bottom: $spacing-md;
+      }
+
+      .craftSteps {
+        .stepsTitle {
+          font-size: $font-size-sm;
+          font-weight: $font-weight-medium;
+          color: $color-text-primary;
+          margin-bottom: $spacing-sm;
+        }
+
+        .stepList {
+          .stepItem {
+            display: flex;
+            align-items: flex-start;
+            padding: $spacing-sm 0;
+            border-bottom: 1rpx solid $color-divider;
+
+            &:last-child {
+              border-bottom: none;
+            }
+
+            .stepNum {
+              width: 40rpx;
+              height: 40rpx;
+              border-radius: $radius-round;
+              background: rgba($color-primary, 0.1);
+              color: $color-primary;
+              display: flex;
+              align-items: center;
+              justify-content: center;
+              font-size: $font-size-sm;
+              font-weight: $font-weight-semibold;
+              margin-right: $spacing-md;
+              flex-shrink: 0;
+            }
+
+            .stepText {
+              flex: 1;
+              font-size: $font-size-sm;
+              color: $color-text-secondary;
+              line-height: 1.6;
+            }
+          }
+        }
+      }
+    }
+  }
+}
+
+.batchSection {
+  padding: 0 $page-padding $spacing-lg;
+
+  .batchCard {
+    background: $color-bg-card;
+    border-radius: $radius-lg;
+    padding: $spacing-lg;
+    box-shadow: $shadow-card;
+
+    .batchHeader {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      margin-bottom: $spacing-lg;
+
+      .batchTitle {
+        font-size: $font-size-lg;
+        font-weight: $font-weight-semibold;
+        color: $color-text-primary;
+      }
+
+      .batchTotal {
+        font-size: $font-size-sm;
+        color: $color-text-tertiary;
+
+        .totalNum {
+          color: $color-primary;
+          font-weight: $font-weight-semibold;
+          font-size: $font-size-md;
+        }
+      }
+    }
+
+    .batchChart {
+      display: flex;
+      align-items: flex-end;
+      justify-content: space-between;
+      height: 200rpx;
+      padding: 0 $spacing-sm;
+
+      .chartItem {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        flex: 1;
+
+        .chartBar {
+          width: 40rpx;
+          background: linear-gradient(180deg, $color-primary 0%, $color-primary-light 100%);
+          border-radius: $radius-xs $radius-xs 0 0;
+          transition: all $transition-base;
+          margin-bottom: $spacing-sm;
+        }
+
+        .chartLabel {
+          font-size: $font-size-xs;
+          color: $color-text-tertiary;
+        }
+
+        .chartValue {
+          font-size: $font-size-xs;
+          color: $color-primary;
+          font-weight: $font-weight-medium;
+          margin-top: 4rpx;
+        }
+      }
+    }
+  }
+}
+
+.quickActions {
+  padding: 0 $page-padding $spacing-lg;
+
+  .actionGrid {
+    display: flex;
+    gap: $spacing-md;
+
+    .actionItem {
+      flex: 1;
+      background: $color-bg-card;
+      border-radius: $radius-lg;
+      padding: $spacing-lg;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      box-shadow: $shadow-card;
+      transition: all $transition-base;
+
+      &:active {
+        transform: scale(0.95);
+      }
+
+      .actionIcon {
+        width: 88rpx;
+        height: 88rpx;
+        border-radius: $radius-lg;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        font-size: 40rpx;
+        margin-bottom: $spacing-sm;
+
+        &.bamboo {
+          background: rgba($color-bamboo, 0.15);
+        }
+
+        &.frame {
+          background: rgba($color-primary, 0.15);
+        }
+
+        &.painting {
+          background: rgba($color-umbrella-red, 0.15);
+        }
+
+        &.oiling {
+          background: rgba($color-success, 0.15);
+        }
+      }
+
+      .actionName {
+        font-size: $font-size-sm;
+        color: $color-text-primary;
+        font-weight: $font-weight-medium;
+        margin-bottom: 4rpx;
+      }
+
+      .actionCount {
+        font-size: $font-size-xs;
+        color: $color-text-tertiary;
+
+        .countNum {
+          color: $color-primary;
+          font-weight: $font-weight-semibold;
+        }
+      }
+    }
+  }
+}

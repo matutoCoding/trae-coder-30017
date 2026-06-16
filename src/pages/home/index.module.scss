@@ -1,0 +1,312 @@
+@use '@/styles/variables.scss' as *;
+
+.homePage {
+  min-height: 100vh;
+  background: $color-bg-page;
+}
+
+.bannerSection {
+  padding: $spacing-lg $page-padding 0;
+
+  .banner {
+    height: 320rpx;
+    border-radius: $radius-lg;
+    overflow: hidden;
+    background: linear-gradient(135deg, $color-primary 0%, $color-primary-light 100%);
+    position: relative;
+
+    .bannerContent {
+      position: absolute;
+      top: 0;
+      left: 0;
+      right: 0;
+      bottom: 0;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      padding: 0 $spacing-xl;
+      color: $color-text-white;
+
+      .bannerTitle {
+        font-size: $font-size-xxl;
+        font-weight: $font-weight-bold;
+        margin-bottom: $spacing-sm;
+        text-shadow: 0 2rpx 8rpx rgba(0, 0, 0, 0.2);
+      }
+
+      .bannerSubtitle {
+        font-size: $font-size-md;
+        opacity: 0.9;
+      }
+
+      .bannerDecoration {
+        position: absolute;
+        right: $spacing-xl;
+        top: 50%;
+        transform: translateY(-50%);
+        font-size: 160rpx;
+        opacity: 0.3;
+      }
+    }
+  }
+}
+
+.quickEntry {
+  padding: $spacing-lg $page-padding;
+
+  .entryGrid {
+    display: flex;
+    flex-wrap: wrap;
+    gap: $spacing-md;
+
+    .entryItem {
+      width: calc((100% - 48rpx) / 3);
+      background: $color-bg-card;
+      border-radius: $radius-lg;
+      padding: $spacing-lg $spacing-sm;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      box-shadow: $shadow-card;
+      transition: all $transition-base;
+
+      &:active {
+        transform: scale(0.95);
+      }
+
+      .entryIcon {
+        width: 88rpx;
+        height: 88rpx;
+        border-radius: $radius-round;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        font-size: 40rpx;
+        margin-bottom: $spacing-sm;
+
+        &.bamboo {
+          background: rgba($color-bamboo, 0.15);
+        }
+
+        &.frame {
+          background: rgba($color-primary, 0.15);
+        }
+
+        &.painting {
+          background: rgba($color-umbrella-red, 0.15);
+        }
+
+        &.oiling {
+          background: rgba($color-success, 0.15);
+        }
+
+        &.product {
+          background: rgba($color-info, 0.15);
+        }
+
+        &.order {
+          background: rgba($color-warning, 0.15);
+        }
+
+        &.sales {
+          background: rgba($color-umbrella-blue, 0.15);
+        }
+
+        &.craft {
+          background: rgba($color-primary-light, 0.15);
+        }
+      }
+
+      .entryName {
+        font-size: $font-size-sm;
+        color: $color-text-primary;
+        font-weight: $font-weight-medium;
+      }
+    }
+  }
+}
+
+.statsSection {
+  padding: 0 $page-padding $spacing-lg;
+
+  .statsGrid {
+    display: flex;
+    flex-wrap: wrap;
+    gap: $spacing-md;
+
+    .statItem {
+      width: calc((100% - 24rpx) / 2);
+    }
+  }
+}
+
+.processSection {
+  padding: 0 $page-padding $spacing-lg;
+
+  .sectionHeader {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin-bottom: $spacing-md;
+
+    .sectionTitle {
+      font-size: $font-size-lg;
+      font-weight: $font-weight-semibold;
+      color: $color-text-primary;
+      display: flex;
+      align-items: center;
+
+      &::before {
+        content: '';
+        display: inline-block;
+        width: 6rpx;
+        height: 32rpx;
+        background: linear-gradient(180deg, $color-primary 0%, $color-primary-light 100%);
+        border-radius: $radius-xs;
+        margin-right: $spacing-sm;
+      }
+    }
+
+    .viewAll {
+      font-size: $font-size-sm;
+      color: $color-primary;
+    }
+  }
+
+  .processTimeline {
+    background: $color-bg-card;
+    border-radius: $radius-lg;
+    padding: $spacing-lg;
+    box-shadow: $shadow-card;
+
+    .timelineItem {
+      display: flex;
+      padding-left: $spacing-xl;
+      position: relative;
+      padding-bottom: $spacing-lg;
+
+      &:last-child {
+        padding-bottom: 0;
+      }
+
+      &::before {
+        content: '';
+        position: absolute;
+        left: 12rpx;
+        top: 32rpx;
+        bottom: -$spacing-lg;
+        width: 2rpx;
+        background: $color-border;
+      }
+
+      &:last-child::before {
+        display: none;
+      }
+
+      .timelineDot {
+        position: absolute;
+        left: 0;
+        top: 8rpx;
+        width: 28rpx;
+        height: 28rpx;
+        border-radius: $radius-round;
+        background: $color-bg-card;
+        border: 4rpx solid $color-border;
+
+        &.done {
+          border-color: $color-success;
+          background: $color-success;
+        }
+
+        &.doing {
+          border-color: $color-warning;
+          background: $color-warning;
+          box-shadow: 0 0 0 8rpx rgba($color-warning, 0.2);
+        }
+
+        &.pending {
+          border-color: $color-border;
+          background: $color-bg-card;
+        }
+      }
+
+      .timelineContent {
+        flex: 1;
+
+        .timelineTitle {
+          font-size: $font-size-md;
+          font-weight: $font-weight-medium;
+          color: $color-text-primary;
+          margin-bottom: 8rpx;
+          display: flex;
+          align-items: center;
+
+          .statusTag {
+            margin-left: $spacing-sm;
+          }
+        }
+
+        .timelineDesc {
+          font-size: $font-size-sm;
+          color: $color-text-tertiary;
+          line-height: 1.5;
+        }
+
+        .timelineTime {
+          font-size: $font-size-xs;
+          color: $color-text-tertiary;
+          margin-top: 8rpx;
+        }
+      }
+    }
+  }
+}
+
+.productsSection {
+  padding: 0 $page-padding calc(env(safe-area-inset-bottom) + 120rpx);
+
+  .sectionHeader {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin-bottom: $spacing-md;
+
+    .sectionTitle {
+      font-size: $font-size-lg;
+      font-weight: $font-weight-semibold;
+      color: $color-text-primary;
+      display: flex;
+      align-items: center;
+
+      &::before {
+        content: '';
+        display: inline-block;
+        width: 6rpx;
+        height: 32rpx;
+        background: linear-gradient(180deg, $color-primary 0%, $color-primary-light 100%);
+        border-radius: $radius-xs;
+        margin-right: $spacing-sm;
+      }
+    }
+
+    .viewAll {
+      font-size: $font-size-sm;
+      color: $color-primary;
+    }
+  }
+
+  .productsScroll {
+    @include scroll-x-container;
+    margin: 0 -$page-padding;
+    padding: 0 $page-padding;
+
+    .productCard {
+      @include scroll-x-item(280rpx);
+      margin-right: $spacing-md;
+
+      &:last-child {
+        margin-right: $page-padding;
+      }
+    }
+  }
+}

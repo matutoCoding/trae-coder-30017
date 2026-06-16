@@ -1,0 +1,257 @@
+@use '@/styles/variables.scss' as *;
+
+.framePage {
+  min-height: 100vh;
+  background: $color-bg-page;
+  padding-bottom: calc(env(safe-area-inset-bottom) + 120rpx);
+}
+
+.pageHeader {
+  padding: $spacing-lg $page-padding;
+
+  .headerCard {
+    background: linear-gradient(135deg, $color-primary 0%, $color-primary-light 100%);
+    border-radius: $radius-lg;
+    padding: $spacing-xl;
+    box-shadow: $shadow-card;
+    color: $color-text-white;
+
+    .title {
+      font-size: $font-size-lg;
+      font-weight: $font-weight-semibold;
+      margin-bottom: $spacing-sm;
+    }
+
+    .desc {
+      font-size: $font-size-sm;
+      opacity: 0.9;
+      line-height: 1.6;
+    }
+  }
+}
+
+.processSteps {
+  padding: 0 $page-padding $spacing-lg;
+
+  .stepsTitle {
+    font-size: $font-size-lg;
+    font-weight: $font-weight-semibold;
+    color: $color-text-primary;
+    margin-bottom: $spacing-md;
+    display: flex;
+    align-items: center;
+
+    &::before {
+      content: '';
+      display: inline-block;
+      width: 6rpx;
+      height: 32rpx;
+      background: linear-gradient(180deg, $color-primary 0%, $color-primary-light 100%);
+      border-radius: $radius-xs;
+      margin-right: $spacing-sm;
+    }
+  }
+
+  .stepCard {
+    background: $color-bg-card;
+    border-radius: $radius-lg;
+    padding: $spacing-lg;
+    margin-bottom: $spacing-md;
+    box-shadow: $shadow-card;
+    display: flex;
+    gap: $spacing-md;
+
+    .stepIcon {
+      width: 80rpx;
+      height: 80rpx;
+      border-radius: $radius-lg;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 40rpx;
+      flex-shrink: 0;
+
+      &.cut {
+        background: rgba($color-primary, 0.15);
+      }
+
+      &.bake {
+        background: rgba($color-warning, 0.15);
+      }
+
+      &.drill {
+        background: rgba($color-info, 0.15);
+      }
+
+      &.thread {
+        background: rgba($color-success, 0.15);
+      }
+
+      &.polish {
+        background: rgba($color-umbrella-blue, 0.15);
+      }
+    }
+
+    .stepContent {
+      flex: 1;
+
+      .stepName {
+        font-size: $font-size-md;
+        font-weight: $font-weight-semibold;
+        color: $color-text-primary;
+        margin-bottom: 8rpx;
+      }
+
+      .stepDesc {
+        font-size: $font-size-sm;
+        color: $color-text-secondary;
+        line-height: 1.6;
+      }
+    }
+  }
+}
+
+.frameList {
+  padding: 0 $page-padding;
+
+  .listTitle {
+    font-size: $font-size-lg;
+    font-weight: $font-weight-semibold;
+    color: $color-text-primary;
+    margin-bottom: $spacing-md;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+
+    .titleLeft {
+      display: flex;
+      align-items: center;
+
+      &::before {
+        content: '';
+        display: inline-block;
+        width: 6rpx;
+        height: 32rpx;
+        background: linear-gradient(180deg, $color-primary 0%, $color-primary-light 100%);
+        border-radius: $radius-xs;
+        margin-right: $spacing-sm;
+      }
+    }
+
+    .count {
+      font-size: $font-size-sm;
+      color: $color-text-tertiary;
+
+      .num {
+        color: $color-primary;
+        font-weight: $font-weight-semibold;
+      }
+    }
+  }
+
+  .frameItem {
+    background: $color-bg-card;
+    border-radius: $radius-lg;
+    padding: $spacing-lg;
+    margin-bottom: $spacing-md;
+    box-shadow: $shadow-card;
+    transition: all $transition-base;
+
+    &:active {
+      transform: scale(0.99);
+    }
+
+    .frameHeader {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      margin-bottom: $spacing-md;
+
+      .frameId {
+        font-size: $font-size-md;
+        font-weight: $font-weight-semibold;
+        color: $color-text-primary;
+      }
+
+      .statusTag {
+        font-size: $font-size-xs;
+        padding: 4rpx 16rpx;
+        border-radius: $radius-sm;
+
+        &.done {
+          background: rgba($color-success, 0.1);
+          color: $color-success;
+        }
+
+        &.doing {
+          background: rgba($color-warning, 0.1);
+          color: $color-warning;
+        }
+
+        &.pending {
+          background: rgba($color-error, 0.1);
+          color: $color-error;
+        }
+      }
+    }
+
+    .frameInfo {
+      display: flex;
+      flex-wrap: wrap;
+      gap: $spacing-md;
+      margin-bottom: $spacing-md;
+
+      .infoItem {
+        display: flex;
+        flex-direction: column;
+        min-width: 100rpx;
+
+        .infoLabel {
+          font-size: $font-size-xs;
+          color: $color-text-tertiary;
+          margin-bottom: 4rpx;
+        }
+
+        .infoValue {
+          font-size: $font-size-md;
+          color: $color-text-primary;
+          font-weight: $font-weight-medium;
+        }
+      }
+    }
+
+    .frameFooter {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      padding-top: $spacing-md;
+      border-top: 1rpx solid $color-divider;
+
+      .craftsman {
+        font-size: $font-size-sm;
+        color: $color-text-secondary;
+      }
+
+      .checkTag {
+        font-size: $font-size-xs;
+        padding: 4rpx 12rpx;
+        border-radius: $radius-sm;
+
+        &.passed {
+          background: rgba($color-success, 0.1);
+          color: $color-success;
+        }
+
+        &.pending {
+          background: rgba($color-warning, 0.1);
+          color: $color-warning;
+        }
+
+        &.failed {
+          background: rgba($color-error, 0.1);
+          color: $color-error;
+        }
+      }
+    }
+  }
+}

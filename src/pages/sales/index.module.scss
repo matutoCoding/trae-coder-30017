@@ -1,0 +1,299 @@
+@use '@/styles/variables.scss' as *;
+
+.salesPage {
+  min-height: 100vh;
+  background: $color-bg-page;
+  padding-bottom: calc(env(safe-area-inset-bottom) + 120rpx);
+}
+
+.tabSection {
+  padding: $spacing-lg $page-padding 0;
+
+  .tabBar {
+    display: flex;
+    background: $color-bg-card;
+    border-radius: $radius-lg;
+    padding: $spacing-xs;
+    box-shadow: $shadow-card;
+
+    .tabItem {
+      flex: 1;
+      height: $button-height-md;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      border-radius: $radius-md;
+      font-size: $font-size-md;
+      color: $color-text-secondary;
+      font-weight: $font-weight-medium;
+      transition: all $transition-base;
+
+      &.active {
+        background: linear-gradient(135deg, $color-primary 0%, $color-primary-light 100%);
+        color: $color-text-white;
+        box-shadow: 0 4rpx 12rpx rgba($color-primary, 0.3);
+      }
+    }
+  }
+}
+
+.quickActions {
+  padding: $spacing-lg $page-padding;
+
+  .actionGrid {
+    display: flex;
+    gap: $spacing-md;
+
+    .actionItem {
+      flex: 1;
+      background: $color-bg-card;
+      border-radius: $radius-lg;
+      padding: $spacing-lg;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      box-shadow: $shadow-card;
+      transition: all $transition-base;
+
+      &:active {
+        transform: scale(0.95);
+      }
+
+      .actionIcon {
+        width: 88rpx;
+        height: 88rpx;
+        border-radius: $radius-lg;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        font-size: 40rpx;
+        margin-bottom: $spacing-sm;
+
+        &.wedding {
+          background: rgba($color-umbrella-red, 0.15);
+        }
+
+        &.cultural {
+          background: rgba($color-umbrella-blue, 0.15);
+        }
+
+        &.custom {
+          background: rgba($color-warning, 0.15);
+        }
+
+        &.record {
+          background: rgba($color-success, 0.15);
+        }
+      }
+
+      .actionName {
+        font-size: $font-size-sm;
+        color: $color-text-primary;
+        font-weight: $font-weight-medium;
+        margin-bottom: 4rpx;
+      }
+
+      .actionDesc {
+        font-size: $font-size-xs;
+        color: $color-text-tertiary;
+      }
+    }
+  }
+}
+
+.salesStats {
+  padding: 0 $page-padding $spacing-lg;
+
+  .statsCard {
+    background: linear-gradient(135deg, $color-primary 0%, $color-primary-light 100%);
+    border-radius: $radius-lg;
+    padding: $spacing-xl;
+    box-shadow: $shadow-card;
+    color: $color-text-white;
+
+    .statsTitle {
+      font-size: $font-size-md;
+      opacity: 0.9;
+      margin-bottom: $spacing-md;
+    }
+
+    .statsContent {
+      display: flex;
+      justify-content: space-between;
+
+      .statsItem {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+
+        .statsValue {
+          font-size: $font-size-xxl;
+          font-weight: $font-weight-bold;
+          margin-bottom: 4rpx;
+
+          .unit {
+            font-size: $font-size-sm;
+            font-weight: $font-weight-normal;
+            opacity: 0.8;
+          }
+        }
+
+        .statsLabel {
+          font-size: $font-size-sm;
+          opacity: 0.8;
+        }
+      }
+    }
+  }
+}
+
+.ordersSection {
+  padding: 0 $page-padding;
+
+  .sectionHeader {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin-bottom: $spacing-md;
+
+    .sectionTitle {
+      font-size: $font-size-lg;
+      font-weight: $font-weight-semibold;
+      color: $color-text-primary;
+      display: flex;
+      align-items: center;
+
+      &::before {
+        content: '';
+        display: inline-block;
+        width: 6rpx;
+        height: 32rpx;
+        background: linear-gradient(180deg, $color-primary 0%, $color-primary-light 100%);
+        border-radius: $radius-xs;
+        margin-right: $spacing-sm;
+      }
+    }
+
+    .viewAll {
+      font-size: $font-size-sm;
+      color: $color-primary;
+    }
+  }
+}
+
+.salesRecordsSection {
+  padding: 0 $page-padding;
+
+  .recordList {
+    .recordItem {
+      background: $color-bg-card;
+      border-radius: $radius-lg;
+      padding: $spacing-lg;
+      margin-bottom: $spacing-md;
+      box-shadow: $shadow-card;
+      transition: all $transition-base;
+
+      &:active {
+        transform: scale(0.99);
+      }
+
+      .recordHeader {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        margin-bottom: $spacing-md;
+
+        .recordNo {
+          font-size: $font-size-sm;
+          color: $color-text-tertiary;
+        }
+
+        .channelTag {
+          font-size: $font-size-xs;
+          padding: 4rpx 16rpx;
+          border-radius: $radius-sm;
+
+          &.online {
+            background: rgba($color-info, 0.1);
+            color: $color-info;
+          }
+
+          &.offline {
+            background: rgba($color-success, 0.1);
+            color: $color-success;
+          }
+
+          &.wholesale {
+            background: rgba($color-warning, 0.1);
+            color: $color-warning;
+          }
+        }
+      }
+
+      .recordContent {
+        margin-bottom: $spacing-md;
+
+        .productName {
+          font-size: $font-size-md;
+          font-weight: $font-weight-medium;
+          color: $color-text-primary;
+          margin-bottom: 8rpx;
+        }
+
+        .customerInfo {
+          font-size: $font-size-sm;
+          color: $color-text-secondary;
+        }
+      }
+
+      .recordFooter {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        padding-top: $spacing-md;
+        border-top: 1rpx solid $color-divider;
+
+        .quantity {
+          font-size: $font-size-sm;
+          color: $color-text-tertiary;
+        }
+
+        .amount {
+          font-size: $font-size-lg;
+          font-weight: $font-weight-bold;
+          color: $color-umbrella-red;
+
+          .unit {
+            font-size: $font-size-sm;
+            font-weight: $font-weight-normal;
+          }
+        }
+      }
+
+      .saleDate {
+        font-size: $font-size-xs;
+        color: $color-text-tertiary;
+        margin-top: 8rpx;
+      }
+    }
+  }
+}
+
+.emptyState {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  padding: $spacing-xxl 0;
+
+  .emptyIcon {
+    font-size: 120rpx;
+    opacity: 0.3;
+    margin-bottom: $spacing-md;
+  }
+
+  .emptyText {
+    font-size: $font-size-md;
+    color: $color-text-tertiary;
+  }
+}
